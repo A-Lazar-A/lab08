@@ -26,6 +26,11 @@ if(BUILD_EXAMPLES)
   endforeach(EXAMPLE_SOURCE ${EXAMPLE_SOURCES})
 endif()
 
+ install(TARGETS solver DESTINATION bin)
+
+ include(CPackConfig.cmake) 
+ include(CPackSourceConfig.cmake)
+
 install(TARGETS print
     EXPORT print-config
     ARCHIVE DESTINATION lib
