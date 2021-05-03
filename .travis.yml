@@ -6,7 +6,9 @@
 
 deploy:
  provider: releases
-  file:
+ api_key:
+   secure:     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
+    file:
   - solver_application/_build/solver-source-files.zip
   - solver_application/_build/solver-source-files.tar.gz
   - if [ "$TRAVIS_OS_NAME" = "osx" ]; then 'solver_application/_build/solver.dmg'  ;fi
