@@ -1,3 +1,31 @@
+os:
+    - linux
+    - osx
+
+# язык
+language: cpp
+
+# два компилятора, как в задании
+compiler:
+    - clang
+    - gcc
+
+# глубина клонирования
+git:
+    depth: 1
+
+tags: true
+
+# Запускаем на VM
+sudo: true
+
+# нужные аддоны
+addons:
+    apt:
+        - cmake
+        - cmake-data
+        - rpm
+script:
 - cmake --build _build --target package_source
 - cd _build
 - if [ "$TRAVIS_OS_NAME" = "osx" ]; then cpack -G DragNDrop  ;fi
